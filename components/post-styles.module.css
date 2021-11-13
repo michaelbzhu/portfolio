@@ -20,3 +20,16 @@
 .post figcaption {
   @apply w-min mx-auto my-1 text-gray-600 text-xs;
 }
+
+.post hr {
+  @apply my-4;
+}
+
+.post div,
+.post iframe {
+  @apply mx-auto;
+}
+
+.post blockquote {
+  @apply p-4 italic border-l-4 bg-gray-100 text-gray-600 border-gray-500;
+}

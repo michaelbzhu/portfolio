@@ -35,7 +35,7 @@ export default function Layout(props) {
 
       <main className="w-10/12 mx-auto md:w-3/5 py-10">
         <Link href="/">
-          <a className="font-bold text-left text-3xl">Michael Zhu</a>
+          <a className="text-black font-bold text-left text-3xl">Michael Zhu</a>
         </Link>
         <div className="my-10 w-full flex flex-col items-start justify-center md:flex-row">
           <Navbar />
@@ -50,13 +50,13 @@ function Navbar() {
   return (
     <nav className="text-lg mb-5 w-full flex justify-start md:w-min md:flex-col md:mr-20">
       <Link href="/">
-        <a className="mr-3 mb-1">About</a>
+        <a className="text-black mr-3 mb-1">About</a>
       </Link>
       <Link href="/projects">
-        <a className="mr-3 mb-1">Projects</a>
+        <a className="text-black mr-3 mb-1">Projects</a>
       </Link>
       <Link href="/writing">
-        <a className="mr-3 mb-1">Writing</a>
+        <a className="text-black mr-3 mb-1">Writing</a>
       </Link>
     </nav>
   );
