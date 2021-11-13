@@ -5,3 +5,11 @@
 body {
   @apply bg-white;
 }
+
+ol {
+  @apply list-decimal list-inside;
+}
+
+ul {
+  @apply list-disc list-inside;
+}

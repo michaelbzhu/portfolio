@@ -7,9 +7,8 @@ export default function Article({ post }) {
   return (
     <Layout page={post.title}>
       <div className="w-full">
-        <Title text={post.title} />
+        <Title text={post.title} date={post.date} />
         <PostBody content={post.html} />
-        {/* <div className="post" dangerouslySetInnerHTML={{ __html: post.html }} /> */}
       </div>
     </Layout>
   );
@@ -45,9 +44,12 @@ export async function getStaticProps({ params }) {
     { slug: `${params.slug}` },
     { formats: ["html", "plaintext"] }
   );
+  //console.log(post);
+  const d = new Date(post.published_at).toDateString();
   post = {
     title: post.title,
     html: post.html,
+    date: d.substr(d.indexOf(" ") + 1),
   };
   // Pass post data to the page via props
   return { props: { post } };
