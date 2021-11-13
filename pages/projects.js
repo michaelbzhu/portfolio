@@ -17,20 +17,20 @@ export default function Projects(props) {
 
 function Project(props) {
   return (
-    <>
-      <p className="text-left text-lg leading-7 mt-3 font-semibold">
+    <div className="mb-2.5">
+      <p className="text-left text-lg leading-6 font-medium">
         <a
-          className="text-blue-600 hover:text-blue-800 hover:underline"
+          className="text-black hover:underline"
           href={props.href}
           target="_blank"
         >
           {props.title}
         </a>
       </p>
-      <p className="text-left text-md leading-6 mb-3 pb-1 text-gray-600">
+      <p className="text-left text-md leading-6 text-gray-600">
         {props.description}
       </p>
-    </>
+    </div>
   );
 }
 
