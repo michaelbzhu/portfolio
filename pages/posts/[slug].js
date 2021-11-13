@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Article({ post }) {
   return (
-    <Layout title={post.title}>
+    <Layout page={post.title}>
       <div className="w-full">
         <Title text={post.title} />
         <PostBody content={post.html} />
