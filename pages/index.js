@@ -54,7 +54,7 @@ export default function Home() {
           </ExternalLink>
           as a venture fellow.
         </p>
-        <ul className="justify-center items-center list-none flex">
+        <div className="justify-center items-center flex">
           <Icon href="https://github.com/michaelbzhu">
             <FiGithub />
           </Icon>
@@ -70,7 +70,7 @@ export default function Home() {
           <Icon href="assets/resume.pdf">
             <FiFile />
           </Icon>
-        </ul>
+        </div>
       </div>
 
       {/* <footer className="flex items-center justify-center w-full h-24 border-t">
@@ -90,10 +90,10 @@ export default function Home() {
 
 function Icon(props) {
   return (
-    <li className="text-2xl p-5">
-      <a href={props.href} target="_blank">
+    <div className="text-2xl p-5">
+      <a className="text-black" href={props.href} target="_blank">
         {props.children}
       </a>
-    </li>
+    </div>
   );
 }
