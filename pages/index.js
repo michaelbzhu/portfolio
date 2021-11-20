@@ -6,7 +6,6 @@ import {
   FiFile,
 } from "react-icons/fi";
 import Layout from "../components/Layout";
-import Title from "../components/Title";
 import ExternalLink from "../components/ExternalLink";
 import Image from "next/image";
 import profilePic from "../public/me.jpg";
@@ -72,18 +71,6 @@ export default function Home() {
           </Icon>
         </div>
       </div>
-
-      {/* <footer className="flex items-center justify-center w-full h-24 border-t">
-        <a
-          className="flex items-center justify-center"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <img src="/vercel.svg" alt="Vercel Logo" className="h-4 ml-2" />
-        </a>
-      </footer> */}
     </Layout>
   );
 }
