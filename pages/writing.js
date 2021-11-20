@@ -5,7 +5,12 @@ import { getAllPosts, parseDate } from "../lib/utils";
 
 export default function Writing(props) {
   const posts = props.posts.map((post) => (
-    <Post slug={post.slug} title={post.title} date={post.date} />
+    <Post
+      key={post.slug}
+      slug={post.slug}
+      title={post.title}
+      date={post.date}
+    />
   ));
   return (
     <Layout page="Writing">
