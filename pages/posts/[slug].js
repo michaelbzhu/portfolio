@@ -2,6 +2,13 @@ import Layout from "../../components/Layout";
 import PostBody from "../../components/PostBody";
 import Title from "../../components/Title";
 import Image from "next/image";
+import axios from "axios";
+import {
+  markdownToHTML,
+  getAllPosts,
+  getPost,
+  parseDate,
+} from "../../lib/utils";
 
 export default function Article({ post }) {
   return (
@@ -16,15 +23,11 @@ export default function Article({ post }) {
 
 // This function gets called at build time
 export async function getStaticPaths() {
-  const GhostContentAPI = require("@tryghost/content-api");
-  const api = new GhostContentAPI({
-    url: process.env.GHOST_ADMIN_DOMAIN,
-    key: process.env.GHOST_CONTENT_API_KEY,
-    version: "v3",
-  });
-  const posts = await api.posts.browse();
+  // Collect posts
+  let posts = await getAllPosts();
+
   const paths = posts.map((post) => ({
-    params: { slug: post.slug },
+    params: { slug: `${post.id}` },
   }));
 
   // We'll pre-render only these paths at build time.
@@ -34,22 +37,12 @@ export async function getStaticPaths() {
 
 // This also gets called at build time
 export async function getStaticProps({ params }) {
-  const GhostContentAPI = require("@tryghost/content-api");
-  const api = new GhostContentAPI({
-    url: process.env.GHOST_ADMIN_DOMAIN,
-    key: process.env.GHOST_CONTENT_API_KEY,
-    version: "v3",
-  });
-  let post = await api.posts.read(
-    { slug: `${params.slug}` },
-    { formats: ["html", "plaintext"] }
-  );
-  //console.log(post);
-  const d = new Date(post.published_at).toDateString();
+  let post = await getPost(params.slug);
+  const htmlContent = await markdownToHTML(post.body);
   post = {
     title: post.title,
-    html: post.html,
-    date: d.substr(d.indexOf(" ") + 1),
+    html: htmlContent,
+    date: parseDate(post.updated),
   };
   // Pass post data to the page via props
   return { props: { post } };

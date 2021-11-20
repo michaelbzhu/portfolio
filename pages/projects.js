@@ -17,7 +17,7 @@ export default function Projects(props) {
 
 function Project(props) {
   return (
-    <div className="mb-2.5">
+    <div className="border-b py-2">
       <p className="text-left text-lg leading-6 font-medium">
         <a
           className="text-black hover:underline"

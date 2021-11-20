@@ -1,6 +1,7 @@
 import Layout from "../components/Layout";
 import Title from "../components/Title";
 import Link from "next/link";
+import { getAllPosts, parseDate } from "../lib/utils";
 
 export default function Writing(props) {
   const posts = props.posts.map((post) => (
@@ -32,19 +33,12 @@ function Post(props) {
 }
 
 export async function getStaticProps() {
-  const GhostContentAPI = require("@tryghost/content-api");
-  const api = new GhostContentAPI({
-    url: process.env.GHOST_ADMIN_DOMAIN,
-    key: process.env.GHOST_CONTENT_API_KEY,
-    version: "v3",
-  });
-  let posts = await api.posts.browse();
+  let posts = await getAllPosts();
   posts = posts.map((post) => {
-    const d = new Date(post.published_at).toDateString();
     return {
       title: post.title,
-      slug: post.slug,
-      date: d.substr(d.indexOf(" ") + 1),
+      slug: `${post.id}`,
+      date: parseDate(post.updated),
     };
   });
   return {
