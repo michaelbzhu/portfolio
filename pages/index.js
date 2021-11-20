@@ -66,7 +66,7 @@ export default function Home() {
           <Icon href="mailto:michaelbzhu@berkeley.edu">
             <FiMail />
           </Icon>
-          <Icon href="assets/resume.pdf">
+          <Icon href="/resume.pdf">
             <FiFile />
           </Icon>
         </div>
