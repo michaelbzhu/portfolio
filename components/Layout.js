@@ -49,15 +49,15 @@ export default function Layout(props) {
 function Navbar() {
   return (
     <nav className="text-lg mb-5 w-full flex justify-start md:w-min md:flex-col md:mr-20">
-      <Link href="/">
-        <a className="text-black mr-3 mb-1">About</a>
-      </Link>
-      <Link href="/projects">
-        <a className="text-black mr-3 mb-1">Projects</a>
-      </Link>
-      <Link href="/writing">
-        <a className="text-black mr-3 mb-1">Writing</a>
-      </Link>
+      {[
+        ["About", "/"],
+        ["Projects", "/projects"],
+        ["Writing", "/writing"],
+      ].map((item) => (
+        <Link href={item[1]}>
+          <a className="text-black mr-3 mb-1">{item[0]}</a>
+        </Link>
+      ))}
     </nav>
   );
 }
