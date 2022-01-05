@@ -34,6 +34,11 @@ export default function Home() {
           href="/favicon-16x16.png"
         />
         <link rel="manifest" href="/site.webmanifest"></link>
+        <script
+          defer
+          data-domain="michaelbzhu.com"
+          src="https://plausible.io/js/plausible.js"
+        ></script>
       </Head>
       <div className="w-full text-center">
         <div className="my-10">
