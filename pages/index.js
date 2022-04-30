@@ -74,7 +74,7 @@ export default function Home() {
           </ExternalLink>
           , a student run venture fund that invests in the best student founders
         </p>
-        <p className="text-left text-lg leading-7 my-3 ">
+        {/* <p className="text-left text-lg leading-7 my-3 ">
           Occasionally jot down some random
           <ExternalLink
             href="https://thoughts.michaelbzhu.com"
@@ -82,7 +82,7 @@ export default function Home() {
           >
             thoughts
           </ExternalLink>
-        </p>
+        </p> */}
         <h2 className="text-left text-2xl font-bold leading-7 mt-10">
           I'm currently interested in
         </h2>
