@@ -5,7 +5,6 @@ import {
   FiMail,
   FiFile,
 } from "react-icons/fi";
-import Layout from "../components/Layout";
 import ExternalLink from "../components/ExternalLink";
 import Image from "next/image";
 import Head from "next/head";
