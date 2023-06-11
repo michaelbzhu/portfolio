@@ -59,12 +59,22 @@ export default function Home() {
           </ExternalLink>
         </p>
         <p className="text-left text-lg leading-7 my-3">
-          Previously studied computer science at <ExternalLink
+          Previously studied computer science at
+          <ExternalLink
             href="https://cs.berkeley.edu/"
             className="underline text-black decoration-blue-500 decoration-2"
+            trail
           >
             UC Berkeley
-          </ExternalLink>.
+          </ExternalLink>
+          and worked on engineering + ops at
+          <ExternalLink
+            href="https://dormroomfund.com/"
+            className="underline text-black decoration-purple-500 decoration-2"
+          >
+            Dorm Room Fund
+          </ExternalLink>
+          .
         </p>
         <h2 className="text-left text-2xl font-bold leading-7 mt-10">Links</h2>
         <p className="text-left text-lg leading-7 my-3 ">
@@ -92,14 +102,6 @@ export default function Home() {
             className="text-black underline decoration-2"
           >
             Linkedin
-          </ExternalLink>
-        </p>
-        <p className="text-left text-lg leading-7 my-3 ">
-          <ExternalLink
-            href="/resume.pdf"
-            className="text-black underline decoration-2"
-          >
-            Resume
           </ExternalLink>
         </p>
         {/* <div className="w-min justify-center items-center flex flex-col">
